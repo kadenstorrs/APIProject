@@ -17,7 +17,12 @@
 		3F2A56E12379C966005F4333 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A56E02379C966005F4333 /* CountryItem.swift */; };
 		3F2A56E32379CB2E005F4333 /* CountryItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A56E22379CB2E005F4333 /* CountryItemController.swift */; };
 		3F2A56E52379CED2005F4333 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A56E42379CED2005F4333 /* URL+Helpers.swift */; };
-		3FF9721E237B0318000D6ED1 /* CountryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9721D237B0318000D6ED1 /* CountryItemTableViewCell.swift */; };
+		3FF97220237C5F47000D6ED1 /* ThisOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9721F237C5F47000D6ED1 /* ThisOneTableViewCell.swift */; };
+		3FF97225237DA082000D6ED1 /* RepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF97224237DA082000D6ED1 /* RepModel.swift */; };
+		3FF97227237DA143000D6ED1 /* RepListNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF97226237DA143000D6ED1 /* RepListNetworkController.swift */; };
+		3FF97229237DA15E000D6ED1 /* RepListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF97228237DA15E000D6ED1 /* RepListController.swift */; };
+		3FF9722D237DA3F9000D6ED1 /* RepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9722C237DA3F9000D6ED1 /* RepTableViewController.swift */; };
+		3FF9722F237DB09F000D6ED1 /* ExampleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9722E237DB09F000D6ED1 /* ExampleTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +58,12 @@
 		3F2A56E02379C966005F4333 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
 		3F2A56E22379CB2E005F4333 /* CountryItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItemController.swift; sourceTree = "<group>"; };
 		3F2A56E42379CED2005F4333 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
-		3FF9721D237B0318000D6ED1 /* CountryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItemTableViewCell.swift; sourceTree = "<group>"; };
+		3FF9721F237C5F47000D6ED1 /* ThisOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisOneTableViewCell.swift; sourceTree = "<group>"; };
+		3FF97224237DA082000D6ED1 /* RepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepModel.swift; sourceTree = "<group>"; };
+		3FF97226237DA143000D6ED1 /* RepListNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepListNetworkController.swift; sourceTree = "<group>"; };
+		3FF97228237DA15E000D6ED1 /* RepListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepListController.swift; sourceTree = "<group>"; };
+		3FF9722C237DA3F9000D6ED1 /* RepTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepTableViewController.swift; sourceTree = "<group>"; };
+		3FF9722E237DB09F000D6ED1 /* ExampleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +94,13 @@
 		3F2A569E2379C25B005F4333 = {
 			isa = PBXGroup;
 			children = (
-				3F2A56A92379C25C005F4333 /* Model */,
-				3F2A56DA2379C2AF005F4333 /* View */,
-				3F2A56DB2379C2B7005F4333 /* Controller */,
+				3F2A56A92379C25C005F4333 /* Model1 */,
+				3F2A56DA2379C2AF005F4333 /* View1 */,
+				3F2A56DB2379C2B7005F4333 /* Controller1 */,
+				3FF97221237D9FCD000D6ED1 /* Model2 */,
+				3FF97222237D9FE0000D6ED1 /* View2 */,
+				3FF97223237D9FEB000D6ED1 /* Controller2 */,
+				3F2A56AE2379C25C005F4333 /* Main.storyboard */,
 				3F2A56B32379C25D005F4333 /* LaunchScreen.storyboard */,
 				3F2A56B62379C25D005F4333 /* Info.plist */,
 				3F2A56AA2379C25C005F4333 /* AppDelegate.swift */,
@@ -107,12 +121,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F2A56A92379C25C005F4333 /* Model */ = {
+		3F2A56A92379C25C005F4333 /* Model1 */ = {
 			isa = PBXGroup;
 			children = (
 				3F2A56E42379CED2005F4333 /* URL+Helpers.swift */,
 			);
-			path = Model;
+			path = Model1;
 			sourceTree = "<group>";
 		};
 		3F2A56BE2379C25D005F4333 /* CountrySearchTests */ = {
@@ -132,23 +146,48 @@
 			path = CountrySearchUITests;
 			sourceTree = "<group>";
 		};
-		3F2A56DA2379C2AF005F4333 /* View */ = {
+		3F2A56DA2379C2AF005F4333 /* View1 */ = {
 			isa = PBXGroup;
 			children = (
 				3F2A56D82379C29F005F4333 /* CountryListTableViewController.swift */,
-				3F2A56AE2379C25C005F4333 /* Main.storyboard */,
-				3FF9721D237B0318000D6ED1 /* CountryItemTableViewCell.swift */,
+				3FF9721F237C5F47000D6ED1 /* ThisOneTableViewCell.swift */,
+				3FF9722E237DB09F000D6ED1 /* ExampleTableView.swift */,
 			);
-			path = View;
+			path = View1;
 			sourceTree = "<group>";
 		};
-		3F2A56DB2379C2B7005F4333 /* Controller */ = {
+		3F2A56DB2379C2B7005F4333 /* Controller1 */ = {
 			isa = PBXGroup;
 			children = (
 				3F2A56E02379C966005F4333 /* CountryItem.swift */,
 				3F2A56E22379CB2E005F4333 /* CountryItemController.swift */,
 			);
-			path = Controller;
+			path = Controller1;
+			sourceTree = "<group>";
+		};
+		3FF97221237D9FCD000D6ED1 /* Model2 */ = {
+			isa = PBXGroup;
+			children = (
+				3FF97224237DA082000D6ED1 /* RepModel.swift */,
+			);
+			path = Model2;
+			sourceTree = "<group>";
+		};
+		3FF97222237D9FE0000D6ED1 /* View2 */ = {
+			isa = PBXGroup;
+			children = (
+				3FF9722C237DA3F9000D6ED1 /* RepTableViewController.swift */,
+			);
+			path = View2;
+			sourceTree = "<group>";
+		};
+		3FF97223237D9FEB000D6ED1 /* Controller2 */ = {
+			isa = PBXGroup;
+			children = (
+				3FF97228237DA15E000D6ED1 /* RepListController.swift */,
+				3FF97226237DA143000D6ED1 /* RepListNetworkController.swift */,
+			);
+			path = Controller2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,12 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF97225237DA082000D6ED1 /* RepModel.swift in Sources */,
+				3FF97220237C5F47000D6ED1 /* ThisOneTableViewCell.swift in Sources */,
 				3F2A56E32379CB2E005F4333 /* CountryItemController.swift in Sources */,
 				3F2A56E52379CED2005F4333 /* URL+Helpers.swift in Sources */,
 				3F2A56DF2379C2ED005F4333 /* AppDelegate.swift in Sources */,
 				3F2A56D92379C29F005F4333 /* CountryListTableViewController.swift in Sources */,
+				3FF97227237DA143000D6ED1 /* RepListNetworkController.swift in Sources */,
+				3FF9722D237DA3F9000D6ED1 /* RepTableViewController.swift in Sources */,
+				3FF97229237DA15E000D6ED1 /* RepListController.swift in Sources */,
+				3FF9722F237DB09F000D6ED1 /* ExampleTableView.swift in Sources */,
 				3F2A56E12379C966005F4333 /* CountryItem.swift in Sources */,
-				3FF9721E237B0318000D6ED1 /* CountryItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

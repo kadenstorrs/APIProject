@@ -21,7 +21,10 @@ class CountryListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
+        searchBar.searchResultsUpdater = self
+        searchBar.hidesNavigationBarDuringPresentation = false
+        searchBar.dimsBackgroundDuringPresentation = false
     }
     
     func fetchCountryItems() {
@@ -33,16 +36,17 @@ class CountryListTableViewController: UITableViewController {
         
         if !searchTerm.isEmpty {
             let query: [String: String] = [
-                "id": "",
-                "iso2Code": "",
-                "name": searchTerm
+                "drilldowns": "Nation",
+               "measures": "Population",
+                "Year": searchTerm
             ]
-            countryItemController.fetchItems(matching: query)
+            countryItemController.fetchItems(matching: query, searchTerm: searchTerm)
             { (countryItems) in
                 guard let countryItems = countryItems else { return }
-                self.items = countryItems
                 DispatchQueue.main.async {
+                    self.items = countryItems
                     self.tableView.reloadData()
+                    print(self.items)
                 }
                 
             }
@@ -51,14 +55,7 @@ class CountryListTableViewController: UITableViewController {
     
     
     
-    func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let item = items[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.textLabel?.text = item.iso2Code
-        cell.textLabel?.text = item.region
-        cell.textLabel?.text = item.id
-        
-    }
+   
     
     
     
@@ -70,10 +67,14 @@ class CountryListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-        configure(cell: cell, forItemAt: indexPath)
-        
+      
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? ThisOneTableViewCell else {
+            return UITableViewCell()
+        }
+         let item = items[indexPath.row]
+        cell.labelOne?.text = item.nation
+        cell.labelTwo?.text = String(item.population)
+        cell.labelFour?.text = item.year
         return cell
     }
     
@@ -82,13 +83,14 @@ class CountryListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
 }
+
 extension CountryListTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
         fetchCountryItems()
-        
+
         searchBar.resignFirstResponder()
         
     }
